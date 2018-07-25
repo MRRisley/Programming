@@ -14,9 +14,15 @@
 	<link rel="stylesheet" href="../MRRisley/css/skeleton.css">
 	<link rel="stylesheet" href="../MRRisley/css/custom.css">
 	
+		<style>
+		* body {
+			margin: 0;
+			font-family: Courier New, Arial, monotype;
+		}
+		</style>
 </head>
 
-<body class="code-snippets-visible">
+<body>
 
 <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -27,15 +33,78 @@
 	<h5 align="center"><a href = "../MRRisley/index.html">Back Home</a></h5>
 	<h5>Topics</h5>
 	<p><a href = "#intro">1. Intro</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#intro_a">a. Types of Programming</a>
 	<br><a href = "#variables">2. Variables</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#numeric">a. Numeric</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#numeric">b. Strings</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#strings">b. Strings</a>
 	</p>
 	</div>
 	
 	<div class="docs-section" id="intro">
-	<h5 class="title">Intro</h5>
+	<h5 class="title" id="intro">1. Intro</h5>
+	<p>
+	Conceptually, a computer program is an algorithm: a set of rules, logic, and/or procedures in order 
+	to accomplish a task. In order for the program to run, it requires a language that translates these 
+	rules, logic, and/or procedures in a way that the program understands. Generally speaking, programs accept inputs 
+	and translate them into outputs.
+	<br><br>
+	Considered from end-to-end, data analytics requires a broad range of programs in order to extract and deliver insights from data:
+	<br>
+	<ol>
+	<li>Data Acquisition and Pre-processing</li>
+	<ul>
+	<li>includes data queries, establishing data definitions, and preliminary cleaning</li>
+	<li>throughout the project, it is usually necessary to return to this stage to introduce additional layers of granularity and segmentation </li>
+	<li>common programs include SQL and Excel</li>
+	<li>many programs listed in step (2) below can also be leveraged for cleaning</li>
+	</ul>
+	<li>Data Exploration</li>
+	<ul>
+	<li>this step includes data visualization, summary, and outlier analysis in order to understand the data</li>
+	<li>often the universe of possible analytical solutions is narrowed in this stage as pieces of information are assigned greater or lesser importance</li>
+	<li>common programs include R, SAS, MATLAB, and Excel</li>
+	<li>newer programs include Spark, H2O, and Python</li>
+	<li>in a work environment, the choice of program depends on the company you work for and the nature of the task</li>
+	<li>also depending on the nature of the task, data exploration may be the extent of the analysis</li>
+	</ul>
+	<li>Data Analysis</li>
+	<ul>
+	<li>this step may include more focused analysis using statistics, modeling, algorithms, etc.</li>
+	<li>the degree to which this step is successful is completely dependent on the success of the two prior stages</li>
+	<li>analytics degrees give you the tools for this step, but real-world data is rarely ready for them as-is</li>
+	<li>"garbage in, garbage out" is the mantra of analytics</li>
+	<li>the key to success in analytics is a healthy skepticism of all data you see balances against a willingness
+	to accept data as "good enough" after sufficient cleaning and review</li>
+	</ul>
+	<li>Insight Delivery</li>
+	<ul>
+	<li>through several iterations of steps 1-3, a summary and conclusion from the analysis is usually given to management</li>
+	<li>nature of the delivery depends on the audience and their level of technical experience</li>
+	<li>it may be completely appropriate to make no mention of statistics or modeling choices but only to deliver the results (executive or senior management)</li>
+	<li>in other settings, it may be appropriate to dive immediately into technical details</li>
+	<li>for non-technical audiences, it may be preferable to develop graphs/figures in Excel or Tableau as they are typically presentation-ready with little work</li>
+	<li>for technical audiences, direct output from statistical software may be acceptable or even expected</li>
+	</ul>
+	</ol>
+	<h5 id="intro_a">&nbsp;&nbsp;&nbsp;&nbsp; a. Types of Programming</h5>
+	Programming involves similar concepts that are shared across languages. The way the language treats 
+	them tends to vary, but the concepts are shared.
+	<br><br>
+		
+	</p>
+	<a href = "#top">Top</a>
+	</div>
+	
+	<div class="docs-section" id="numeric">
+	<h5 class="title" id="variables">2. Variables</h5>
+	<h5 class="title" id="numeric">&nbsp;&nbsp;&nbsp;&nbsp; a. Numeric Variables</h5>
 	<p>Conceptually, a program is an algorithm: a set of rules, logic, and/or procedures in order 
+	to accomplish a task. In order for the program to run, it requires a language that translates these 
+	rules, logic, and/or procedures in a way that the program understands.<br><br>
+		Programming involves similar concepts that are shared across languages. The way the language treats 
+	them tends to vary, but the concepts are shared.<br><br>
+	<h5 class="title" id="strings">&nbsp;&nbsp;&nbsp;&nbsp; b. String Variables</h5>
+	Conceptually, a program is an algorithm: a set of rules, logic, and/or procedures in order 
 	to accomplish a task. In order for the program to run, it requires a language that translates these 
 	rules, logic, and/or procedures in a way that the program understands.<br><br>
 		Programming involves similar concepts that are shared across languages. The way the language treats 
@@ -43,28 +112,9 @@
 	</p>
 	<a href = "#top">Top</a>
 	</div>
-	
-	<div class="docs-section" id="numeric">
-	<h5 class="title">Numeric Variables</h5>
-	<p>Conceptually, a program is an algorithm: a set of rules, logic, and/or procedures in order 
-	to accomplish a task. In order for the program to run, it requires a language that translates these 
-	rules, logic, and/or procedures in a way that the program understands.<br><br>
-		Programming involves similar concepts that are shared across languages. The way the language treats 
-	them tends to vary, but the concepts are shared.<br><br>
-	</p>
-	</div>
- 
-	<div class="docs-section" id="strings">
-	<h5 class="title">String Variables</h5>
-	<p>Conceptually, a program is an algorithm: a set of rules, logic, and/or procedures in order 
-	to accomplish a task. In order for the program to run, it requires a language that translates these 
-	rules, logic, and/or procedures in a way that the program understands.<br><br>
-		Programming involves similar concepts that are shared across languages. The way the language treats 
-	them tends to vary, but the concepts are shared.<br><br>
-	</p>
-	</div>
   
-  	<div class="docs-section">
+  	<div class="docs-section" align="center">
+	<a href="#top"><h5>Top</h5></a><br>
 	<a href="../MRRisley/index.html"><h5>Back to Home</h5></a>
 	</div>
 
