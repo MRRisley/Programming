@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 
+<!--PROGRAMMING-->
+
 <html lang="en">
 
+<!--HEAD-->
 <head>
 	<meta charset="UTF-8">
 	<title>MRRisley:=("Programming")</title>
@@ -14,6 +17,14 @@
 	<link rel="stylesheet" href="../MRRisley/css/skeleton.css">
 	<link rel="stylesheet" href="../MRRisley/css/custom.css">
 	
+	
+	<!--Markdown Scripts-->
+	<link rel="stylesheet" href="../MRRisley/css/default.css">
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script src="../MRRisley/js/lang-vb.js"></script>
+	<script src="../MRRisley/js/lang-r.js"></script>
+	<script src="../MRRisley/js/lang-sql.js"></script>
+	
 		<style>
 		* body {
 			margin: 0;
@@ -22,10 +33,8 @@
 		</style>
 </head>
 
+<!--BODY-->
 <body>
-
-<!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container" id="top">
 	 <h3 align="center">MRRisley:=("Programming")</h3>
 
@@ -36,10 +45,23 @@
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#intro_a">a. Types of Programming</a>
 	<br><a href = "#variables">2. Variables</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#numeric">a. Numeric</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#integer">i. Integers</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#integer">ii. Floating-Point</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#strings">b. Strings</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#other">c. Other</a>
+	<br><a href = "#functions">3. Functions</a>
+	<br><a href = "#logic">4. Logic</a>
+	<br><a href = "#loops">5. Loops</a>
+	<br><a href = "#format">6. Source Code Formatting</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#comments">a. Comments</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#indents">b. Indentation</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#names">c. Naming Conventions</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#ides">d. Integrated Development Environments (IDEs)</a>
+	<br><a href = "#debugging">7. Debugging</a>
 	</p>
 	</div>
 	
+	<!--1. INTRO-->
 	<div class="docs-section" id="intro">
 	<h5 class="title" id="intro">1. Intro</h5>
 	<p>
@@ -88,14 +110,44 @@
 	</ol>
 	<h5 id="intro_a">&nbsp;&nbsp;&nbsp;&nbsp; a. Types of Programming</h5>
 	Programming involves similar concepts that are shared across languages. The way the language treats 
-	them tends to vary, but the concepts are shared.
+	them tends to vary, but the concepts are shared. The concepts are:
+	<ol>
+	<li><a href="#variables">Variables</a></li>
+	text
+	<li><a href="#functions">Functions</a></li>
+	text
+	<li><a href="#logic">Logic</a></li>
+	text
+	<li><a href="#loops">Loops</a></li>
+	text
+	<li><a href="#format">Code Formatting</a></li>
+	text
+	<li><a href="#debugging">Debugging</a></li>
+	text
+	</ol>
 	<br><br>
-		
+	
+	<pre>
+	<code class="prettyprint lang-vb">
+Dim x as Integer
+x=x+1
+	</code>
+	</pre>
+	
+	<pre>
+	<code class="prettyprint">
+	function (x) {log(x)}
+	</code>
+	</pre>
+	
+	<pre><code class="prettyprint lang-sql">select top 10 * from mydb.dbo.hello where stuff between 0 and 100 and date = 'string'</code></pre>
+	
 	</p>
 	<a href = "#top">Top</a>
 	</div>
 	
-	<div class="docs-section" id="numeric">
+	<!--2. VARIABLES-->
+	<div class="docs-section">
 	<h5 class="title" id="variables">2. Variables</h5>
 	<h5 class="title" id="numeric">&nbsp;&nbsp;&nbsp;&nbsp; a. Numeric Variables</h5>
 	<p>Conceptually, a program is an algorithm: a set of rules, logic, and/or procedures in order 
@@ -113,7 +165,48 @@
 	<a href = "#top">Top</a>
 	</div>
   
-  	<div class="docs-section" align="center">
+  		<!--3. FUNCTIONS-->
+	<div class="docs-section">
+	<h5 class="title" id="functions">3. Functions</h5>
+	<p>
+	</p>
+	<a href = "#top">Top</a>
+	</div>
+ 
+		<!--4. Logic-->
+	<div class="docs-section">
+	<h5 class="title" id="logic">4. Logic</h5>
+	<p>
+	</p>
+	<a href = "#top">Top</a>
+	</div>
+
+		<!--5. Loops-->
+	<div class="docs-section">
+	<h5 class="title" id="loops">5. Loops</h5>
+	<p>
+	</p>
+	<a href = "#top">Top</a>
+	</div>
+
+		<!--6. Code Format-->
+	<div class="docs-section">
+	<h5 class="title" id="format">6. Source Code Formatting</h5>
+	<p>
+	</p>
+	<a href = "#top">Top</a>
+	</div>	
+	
+		<!--7. Debugging-->
+	<div class="docs-section">
+	<h5 class="title" id="debugging">7. Debugging</h5>
+	<p>
+	</p>
+	<a href = "#top">Top</a>
+	</div>	
+		
+	
+	<div class="docs-section" align="center">
 	<a href="#top"><h5>Top</h5></a><br>
 	<a href="../MRRisley/index.html"><h5>Back to Home</h5></a>
 	</div>
