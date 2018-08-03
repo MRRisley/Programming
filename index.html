@@ -111,22 +111,24 @@
 	SQL will still be required to query the ODB. However, as many can tell you, R and SQL are very different 
 	programming languages with different uses. There are generally classed into "paradigms" based on the features of
 	the language, including whether the language specifies sequence of operations and where modifications can occur.
-	In general, a programming language for data analysis is used for its procedural function. A procedural paradigm 
-	is a language that gives the computer specific operations to be completed in sequence. 
+	In general, a programming language for data analysis is used for its procedural function. A language in the procedural paradigm 
+	gives the computer specific operations to be completed in sequence. 
 	For example, SAS's PROC statement and VBA's subroutine is at its most fundamental level a procedure. 
 	<br><br>
-	However, most languages use multiple paradigms. For example, R and Python also use the object-oriented paradigm,
+	However, most languages share features of other paradigms. For example, R and Python also use concepts from the object-oriented paradigm,
 	which includes objects and classes. Everything in R is an object of a specific class, which itself is usually an attribute
 	of the object. For example, a 2x2 matrix in R is of class "matrix," and there are specific methods that can be used with
-	a matrix object.
+	a matrix object. (FYI--some purists will say a strict interpretation of object-oriented programming means that most R objects 
+	are not true "objects".)
 	<br><br>
-	In general, an analyst does not need to know the programming paradigm of a language. However, it is helpful to understand
-	whether you're simply programming a procedure or programming an object. A procedure, such as calculating 1+1 and storing it in memory,
-	is generally self-evident when you see it within source code. On the other hand, programming an object, such as telling the 
-	Excel application in VBA to spit out a user-friendly error for invalid inputs, may be more difficult to understand. Object-oriented
-	program requires a knowledge of the objects themselves. 
+	In general, an analyst does not need to know the programming paradigm of a language and will never engage in semantic debates about them. 
+	However, it is helpful to understand the concepts and whether you're simply programming a procedure or programming an object. A procedure, 
+	such as calculating the sum of two variables and storing it in memory, is generally self-evident when you see it within source code. 
+	On the other hand, programming an object, such as telling the Excel application in VBA to spit out a user-friendly error for invalid inputs, 
+	may be more difficult to understand. Working with programming objects, which are common in most languages, 
+	requires knowledge of the universe of possible objects as well as the objects themselves. 
 	<br><br>
-	A list of common analytical programs and a description follows:
+	A list of common programs utilized for analytics and a description follows:
 	<ol><br>
 	<li>R</li>
 		<p>R utilizes procedural languages C and FORTRAN for computation as well as the R language. It is a
@@ -148,7 +150,12 @@
 		can create and manipulate data whereas PROC steps perform an action on the data. The SAS language is 
 		primarily procedure-based, but there is some flexibility through user-defined functions and macros.</p>	
 	<li>SQL</li>
-		<p></p>
+		<p>SQL is generally unlike the three programs listed above. By itself, SQL (Structured Query Language) follows the 
+		declarative paradigm: the query tells the program what it requires from a database and how to structure the results. 
+		However, the structure of the results are not customizable beyond the SQL language. Importantly, however, there are 
+		several procedural extensions to SQL, with PL/SQL and T-SQL being the most popular. These extensions bring procedural 
+		elements to SQL, such as logic and loops. SQL is almost exclusively used with a procedural extension, which allows the
+		user to customize the output through data definitions, etc.</p>
 	<li>VBA</li>
 	<li>Others</li>	
 		
