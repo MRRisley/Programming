@@ -36,7 +36,7 @@
 <body>
 	
   	<div class="container" id="top">
-	<h3 align="center">MRRisley:=("Programming")</h3>
+	<h3 align="center">MRRisley:=("Programming for Analytics")</h3>
 
 <!--Navigation-->
 <div class="container" id="nav">
@@ -210,7 +210,7 @@
 	<li><a href="#loops">Loops</a></li>
 	<p>Loops are utilized across programming languages in order to perform many iterations of the same task. For example, if I 
 	wanted to color every cell in an Excel worksheet based on its value, I'd need to loop through each cell within that 
-	Worksheet. Even with many, many cells, a loop condenses the procedure into only a handful of lines of code.</p>
+	Worksheet. Even with thousands of cells, a loop condenses the procedure into only a handful of lines of code.</p>
 	<li><a href="#format">Code Formatting</a></li>
 	<p>It is very good practice to format code consistently and with commonly used standards. Never underestimate the power
 	of whitespace, indentation, and comments for making your code more readable. Remember, code readability is not only 
@@ -218,18 +218,39 @@
 	<li><a href="#debugging">Debugging</a></li>
 	<p>Even the best programmer will encounter errors during development. Knowing how to work through the error is known as
 	"debugging". The program usually has built-in error handling to notify the programmer of the type of error and the
-	location. Errors can sometimes lead to an hour of head-scratching before the solution is found, so understanding
-	basic errors and what to look for when they occur are important measure to maintain sanity while coding.</p>
+	location. Errors can sometimes lead to an hour of head-scratching before the solution is found. Therefore, understanding
+	basic errors and what to look for when they occur are important measures to maintain sanity while coding.</p>
 	</ol>
 	<br><br>
-		<div align="center"><a href = "#top">Top</a></div>
+		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 </div>
 	
 <!--2. VARIABLES-->
 <div class="docs-section">
-	
 	<h5 class="title" id="variables">2. Variables</h5>
-	<p>
+	<p>Variables are a requirement of any program. They usually are of a specific type or "class," ranging from integers
+	to variables of a specific type of object within the language.
+	<br><br>
+	Variables in programming offer flexibility. Imagine you are trying to program a calculator-type program that adds two numbers. 
+	The user inputs these two numbers, and then the program displays the answer. Without variables, you cannot program all 
+	possible inputs and outputs:
+	<pre><code>
+1+1 = 2
+1+1.1 = 2.1
+1+1.11 = 2.11
+....	
+	</code></pre>
+	However, with variables, the task becomes much simpler:
+	<pre><code>
+x+y = answer
+	</pre></code>
+	In the first example, the program would have to search for the user inputs in a field of already calculated outputs. 
+	In the second example, the program calculates the output (answer) based on the user inputs (x and y). 
+	<br><br>
+	Theoretically, a program cannot handle all real numbers because there is an infinite set: you can always add an extra decimal
+	place to an already existing number. Under double point precision, for example, each number requires 8 bytes of memory. This generally
+	results in precision up to 17 or so decimal places. Different variable types can frequently add decimal additional precision 
+	if the nature of the problem requires it.	
 	</p>
 	<h5 class="title" id="numeric">&nbsp;&nbsp;&nbsp;&nbsp; a. Numeric Variables</h5>
 	<p>
