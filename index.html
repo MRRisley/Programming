@@ -269,8 +269,29 @@ x+y = answer
 		for "big integer") stores integers from -2^63 to 2^63-1 and requires 8 bytes of memory. The variable type <code>int</code>, on
 		the other hand, requires 4 bytes and ranges from -2^31 to 2^31-1. <code>tinyint</code> ranges from 0 to 255, which is equivalent to 1 byte. For those familiar
 		with binary, 8 bits equals 1 byte, and 8-bit encryption allows 256 possible values. For float variables, two types are common: single- and double-precision
-		floating-point. Single requires 4 bytes of memory while double requires 8 bytes. Some programs allow precision up to 16 bytes.
-	
+		floating-point. Single requires 4 bytes of memory while double requires 8 bytes. Some programs allow precision up to 16 bytes (128 bits).
+		<br><br>
+		You do not need to know bits and bytes in order to program effectively. However, in general, you need to know which types require more
+		memory and why you might need them (i.e., for more decimal precision). It is also important to understand the types and the ultimate
+		precision of your results. Consider the examples below from R and T-SQL. We're simply trying to divide 1/100, which represents 0.01, or 1%.
+		<br><br>
+		In R, the results are as we expect:		
+		<pre><code>
+		> 1/100
+		[1] 0.01
+		</pre></code>
+		In T-SQL, they are not. The query below returns the result 0.		
+		<pre><code>
+		select 1/100
+		</pre></code>
+		Why? R's default numeric variable type is a float. Therefore, the result can also be a float. T-SQL, on the other hand, 
+		will "guess" your variable type. In the example provided, It encounters a 1 and a 100, both of which it reads as an
+		integer. It then returns the result as an integer, which has no decimal precision. So, you get 0. In order to get the
+		expected result, you need to coerce at least one of the numbers into a float. The code below returns the expected
+		result by coercing 1 to a float through the built-in <code>cast</code> function.
+		<pre><code>
+		select select cast(1 as float)/100/100
+		</pre></code>
 	</p>
 	<h5 class="title" id="strings">&nbsp;&nbsp;&nbsp;&nbsp; b. String Variables</h5>
 	<p>
