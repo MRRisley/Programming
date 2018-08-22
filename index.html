@@ -249,11 +249,22 @@ x+y = answer
 	<br><br>
 	Theoretically, a program cannot handle all real numbers because there is an infinite set: you can always add an extra decimal
 	place to an already existing number. Under double point precision, for example, each number requires 8 bytes of memory. This generally
-	results in precision up to 17 or so decimal places. Different variable types can frequently add decimal additional precision 
-	if the nature of the problem requires it.	
+	results in precision up to 17 or so decimal places. Different variable types can frequently add additional decimal precision 
+	if the nature of the problem requires it. Also, in cases where decimal precision is less of a concern than efficiency and memory usage,
+	a variable type with less decimal precision is preferred.
 	</p>
 	<h5 class="title" id="numeric">&nbsp;&nbsp;&nbsp;&nbsp; a. Numeric Variables</h5>
 	<p>
+		Numeric variables range from integers (no decimal precision) to float numeric variable, which replicate approximations of the real
+		number line. Integers are counting numbers (1, 2, 3, ...) and can be negative. Float numeric variables feature decimal 
+		precision. Floats can technically be integers (1 is an integer and a float) but integers cannot be a float (1.1 is not an integer,
+		but it is a float. All programming languages will at least have these two numeric data types, at least in theory. For example,
+		R uses decimal values by default. Even if variable x is assigned an integer, it is stored as a number with decimal precision. To be truly
+		and integer in R, you must coerce the variable x to an integer type. Beyond the basic integer and float, some programming languages offer variations 
+		of integers and floats that have different memory requirements. In T-SQL for example, the variable type <code>bigint</code> (short-hand
+		for "big integer") stores integers from -2^63 to 2^63-1 and requires 8 bytes of memory. The variable type <code>int</code>, on
+		the other hand, requires 4 bytes and ranges from -2^31 to 2^31-1. <code>tinyint</code> ranges from 0 to 255, which is equivalent to 1 byte. For those familiar
+		with binary, 8 bit (which equals 1 byte) encryption allows 256 possible values.  
 	</p>
 	<h5 class="title" id="strings">&nbsp;&nbsp;&nbsp;&nbsp; b. String Variables</h5>
 	<p>
