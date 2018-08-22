@@ -50,7 +50,8 @@
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#integer">i. Integers</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#integer">ii. Floating-Point</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#strings">b. Strings</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#other">c. Other</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#booleans">c. Booleans</a>	
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#other">d. Other</a>
 	<br><a href = "#functions">3. Functions</a>
 	<br><a href = "#logic">4. Logic</a>
 	<br><a href = "#loops">5. Loops</a>
@@ -255,18 +256,26 @@ x+y = answer
 	</p>
 	<h5 class="title" id="numeric">&nbsp;&nbsp;&nbsp;&nbsp; a. Numeric Variables</h5>
 	<p>
-		Numeric variables range from integers (no decimal precision) to float numeric variable, which replicate approximations of the real
-		number line. Integers are counting numbers (1, 2, 3, ...) and can be negative. Float numeric variables feature decimal 
-		precision. Floats can technically be integers (1 is an integer and a float) but integers cannot be a float (1.1 is not an integer,
-		but it is a float. All programming languages will at least have these two numeric data types, at least in theory. For example,
-		R uses decimal values by default. Even if variable x is assigned an integer, it is stored as a number with decimal precision. To be truly
-		and integer in R, you must coerce the variable x to an integer type. Beyond the basic integer and float, some programming languages offer variations 
-		of integers and floats that have different memory requirements. In T-SQL for example, the variable type <code>bigint</code> (short-hand
-		for "big integer") stores integers from -2^63 to 2^63-1 and requires 8 bytes of memory. The variable type <code>int</code>, on
-		the other hand, requires 4 bytes and ranges from -2^31 to 2^31-1. <code>tinyint</code> ranges from 0 to 255, which is equivalent to 1 byte. For those familiar
-		with binary, 8 bit (which equals 1 byte) encryption allows 256 possible values.  
+		Numeric variables range from integers (no decimal precision) to float numeric variables, which replicate approximations of the real
+		number line. Integers are counting numbers (1, 2, 3, ...) and can be negative. "Float" is shorthand for the fact that a 
+		decimal place can occur anywhere in a string of numbers (i.e., it can "float"). In other words, float numeric variables have decimal 
+		places. Floats can technically be integers (1 is an integer and a float) but integers cannot be a float (1.1 is not an integer,
+		but it is a float). All programming languages will at least have these two numeric data types. For example,
+		R uses decimal values by default. Even if variable x is assigned an integer, it is stored as a number with decimal precision. However, x can
+		be coerced to an integer type. 
+		<br><br>
+		Beyond the basic integer and float, some programming languages offer variations of them
+		that have different memory requirements and levels of precision. In T-SQL for example, the variable type <code class="prettyprint">bigint</code> (short-hand
+		for "big integer") stores integers from -2^63 to 2^63-1 and requires 8 bytes of memory. The variable type <code class="prettyprint">int</code>, on
+		the other hand, requires 4 bytes and ranges from -2^31 to 2^31-1. <code class="prettyprint">tinyint</code> ranges from 0 to 255, which is equivalent to 1 byte. For those familiar
+		with binary, 8 bits equals 1 byte, and 8-bit encryption allows 256 possible values. For float variables, two types are common: single- and double-precision
+		floating-point. Single requires 4 bytes of memory while double requires 8 bytes. Some programs allow precision up to 16 bytes.
+	
 	</p>
 	<h5 class="title" id="strings">&nbsp;&nbsp;&nbsp;&nbsp; b. String Variables</h5>
+	<p>
+	</p>
+	<h5 class="title" id="booleans">&nbsp;&nbsp;&nbsp;&nbsp; c. Booleans</h5>
 	<p>
 	</p>
 	<a href = "#top">Top</a>
