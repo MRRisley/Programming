@@ -277,12 +277,12 @@ x+y = answer
 		<br><br>
 		In R, the results are as we expect:		
 		<pre><code>
-		> 1/100
-		[1] 0.01
+> 1/100
+[1] 0.01
 		</pre></code>
 		In T-SQL, they are not. The query below returns the result 0.		
 		<pre><code>
-		select 1/100
+select 1/100
 		</pre></code>
 		Why? R's default numeric variable type is a float. Therefore, the result can also be a float. T-SQL, on the other hand, 
 		will "guess" your variable type. In the example provided, It encounters a 1 and a 100, both of which it reads as an
@@ -290,7 +290,7 @@ x+y = answer
 		expected result, you need to coerce at least one of the numbers into a float. The code below returns the expected
 		result by coercing 1 to a float through the built-in <code>cast</code> function.
 		<pre><code>
-		select select cast(1 as float)/100/100
+select cast(1 as float)/100
 		</pre></code>
 	</p>
 	<h5 class="title" id="strings">&nbsp;&nbsp;&nbsp;&nbsp; b. String Variables</h5>
