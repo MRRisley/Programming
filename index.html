@@ -314,7 +314,7 @@ select cast(1 as float)/100
 		be represented as a string. The following are all examples of strings. I use the double quotation mark (") in order
 		to denote the start and stop of a string. The use of quotation marks to designate strings 
 		is common to almost every programming language.
-<pre><code>
+		<pre><code>
 "string"
 
 "this is a string"
@@ -326,17 +326,17 @@ select cast(1 as float)/100
 "123string"
 
 "123"
-</code></pre>
+		</code></pre>
 		Note in the examples above that there are generally no rules on strings: Anything can be a string. 
 		For data purposes, strings are common to use for categorical data. For example, if a car dealership's inventory were stored
 		as data, one could imagine fields for categories such as color, make, and model. In these instances, these fields
 		would be programmed as string variables, as shown in the data set below:
-<pre><code>
+		<pre><code>
      Model    Color  
 [1,] "Honda"  "Blue" 
 [2,] "Honda"  "Red"  
 [3,] "Toyota" "Black"
-</code></pre>
+		</code></pre>
 		In this example, both of these fields are strings, as denoted by the double quotation marks. However, not all
 		programming languages will display quotation marks in output for string variables. This example was created in R,
 		which always displays quotation marks in output to designate strings. T-SQL and SAS output, on the other hand,
@@ -349,23 +349,23 @@ select cast(1 as float)/100
 		a "type mismatch" error. This is a result of the fact that, without any instruction to the program language, 
 		string variables cannot be stored as numeric values and vice versa. In the R language, explicitly summing a character 
 		value and a numeric value will return an error:
-<pre><code>
+		<pre><code>
 > class("15")
 [1] "character"
 > class(15)
 [1] "numeric"
 > "15"+15
 Error in "15" + 15 : non-numeric argument to binary operator
-</code></pre>
+		</code></pre>
 		The first lines of code tell us that "15" is a character value and that 15 is a numeric value. When sum, an
 		error is returned letting us know that we're attempting to perform a mathematical operation on a non-numeric value,
 		which throws an error.
 		<br>	
 		In many programming applications, however, the program will attempt to coerce a value to the appropriate variable 
 		type. Consider the following line of code in T-SQL:
-<pre><code>
+		<pre><code>
 select '1' + 1
-</code></pre>	
+		</code></pre>	
 		This code returns the value 2 without errors or warnings.
 		<br>
 		Finally, the last consideration for strings is case sensitivity. In some cases, like R, programming languages treat
