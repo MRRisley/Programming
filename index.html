@@ -249,7 +249,7 @@
 	However, with variables, the task becomes much simpler:
 	<pre><code>
 x+y = answer
-	</pre></code>
+	</code></pre>
 	In the first example, the program would have to search for the user inputs in a field of already calculated outputs. 
 	In the second example, the program calculates the output (answer) based on the user inputs (x and y). 
 	<br><br>
@@ -289,11 +289,11 @@ x+y = answer
 		<pre><code>
 > 1/100
 [1] 0.01
-		</pre></code>
+		</code></pre>
 		In T-SQL, they are not. The query below returns the result 0.		
 		<pre><code>
 select 1/100
-		</pre></code>
+		</code></pre>
 		Why? R's default numeric variable type is a float. Therefore, the result can also be a float. T-SQL, on the other hand, 
 		will "guess" your variable type. In the example provided, It encounters a 1 and a 100, both of which it reads as an
 		integer. It then returns the result as an integer, which has no decimal precision. So, you get 0. In order to get the
@@ -301,7 +301,7 @@ select 1/100
 		result by coercing 1 to a float through the built-in <code>cast</code> function.
 		<pre><code>
 select cast(1 as float)/100
-		</pre></code>
+		</code></pre>
 	</p>
 					<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	
