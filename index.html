@@ -9,7 +9,7 @@
 	<meta charset="UTF-8">
 	<title>MRRisley:=("Programming")</title>
 	<meta name="description" content="A high-level guide to programming for analytics.">
-	<meta name="author" content="MRRisley">
+	<meta name="author" content="Matt Risley">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<link rel="stylesheet" href="../MRRisley/css/normalize.css">
@@ -310,8 +310,8 @@ select cast(1 as float)/100
 	
 	<h5 class="title" id="strings">&nbsp;&nbsp;&nbsp;&nbsp; b. String Variables</h5>
 	<p>
-		Strings are essentially non-numeric values, and virtually every character and symbol (and number) can
-		be represented as a string. The following are all examples of strings. I use the double quotation mark (") in order
+		Strings are usually used for non-numeric values, but virtually every character and symbol (<b>and number</b>) can
+		be represented in a string. The following are all examples of strings. I use the double quotation mark (") in order
 		to denote the start and stop of a string. The use of quotation marks to designate strings 
 		is common to almost every programming language.
 		<pre><code>
@@ -329,7 +329,7 @@ select cast(1 as float)/100
 		</code></pre>
 		Note in the examples above that there are generally no rules on strings: Anything can be a string. 
 		For data purposes, strings are common to use for categorical data. For example, if a car dealership's inventory were stored
-		as data, one could imagine fields for categories such as color, make, and model. In these instances, these fields
+		as data, one could imagine fields for vehicle characteristics such as color, make, and model. In these instances, these fields
 		would be programmed as string variables, as shown in the data set below:
 		<pre><code>
      Model    Color  
@@ -342,12 +342,14 @@ select cast(1 as float)/100
 		which always displays quotation marks in output to designate strings. T-SQL and SAS output, on the other hand,
 		will not display the quotation marks.
 	<br><br>
-		The most counter-intuitive part about strings is when a numeric value is of a character variable type. Imagine merging 
-		two data sets that contain numeric account numbers. In the first data set, the variable type is "string" to allow for
-		leading zeroes. If not classed in this way, the account number string "099988" would become 99988 when forced to be
-		a numeric value. If the second data type is numeric for account numbers, merging the data will likely result in 
+		The most counter-intuitive part about strings are the fact that numeric values can be strings. This can cause a
+		host of issues that are sometimes dependent on the programming language. Imagine merging 
+		two data sets that contain numeric account numbers. In the first data set, the variable type for account numbers
+		is "string" to allow for
+		leading zeroes. If not classed in this way, the account number string "099988" would become 99988 when evaluated as
+		a numeric value. If the data type of the account number in the second data set is numeric, merging the data will likely result in 
 		a "type mismatch" error. This is a result of the fact that, without any instruction to the program language, 
-		string variables cannot be stored as numeric values and vice versa. In the R language, explicitly summing a character 
+		string variables cannot be evaluated as numeric values and vice versa. In the R language, explicitly summing a character 
 		value and a numeric value will return an error:
 		<pre><code>
 > class("15")
@@ -357,9 +359,11 @@ select cast(1 as float)/100
 > "15"+15
 Error in "15" + 15 : non-numeric argument to binary operator
 		</code></pre>
-		The first lines of code tell us that "15" is a character value and that 15 is a numeric value. When sum, an
+		The first lines of code tell us that "15" is a character value and that 15 is a numeric value. The difference between 
+		a string and a numeric in this instance is simply the use of the quotation marks. This is true of all programming
+		languages I've worked with. When these two variables are summed in R, an
 		error is returned letting us know that we're attempting to perform a mathematical operation on a non-numeric value,
-		which throws an error.
+		which the program cannot evaluate. 
 		<br><br>	
 		In other programming applications, however, the program will attempt to coerce a value to the appropriate variable 
 		type. Consider the following line of code in T-SQL:
@@ -367,7 +371,13 @@ Error in "15" + 15 : non-numeric argument to binary operator
 select '1' + 1
 		</code></pre>	
 		This code returns the value 2 without errors or warnings. Also, note that a string in T-SQL is represented through a
-		single quotation mark ('). 
+		single quotation mark (').
+		<br><br>
+		To complicate matters further, in some languages, it is impossible to tell visually whether the numeric value you see
+		is a string or a numeric. This is the case with SQL databases, which require you to examine the structure of the 
+		table in order to determine the variable type of a field. Therefore, you may assume two numeric-looking variables can
+		be summed, and in many cases they likely can be without error. But if the query encounters an observation where this is
+		not the case, an error will be thrown.
 		<br><br>
 		Finally, the last consideration for strings is case sensitivity. In most cases, such as in R and Excel VBA, programming languages treat
 		"hello" and "Hello" as two unique strings. In other words, the two are not equivalent, as shown below.
