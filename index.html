@@ -373,9 +373,9 @@ select '1' + 1
 		This code returns the value 2 without errors or warnings. Also, note that a string in T-SQL is represented through a
 		single quotation mark (').
 		<br><br>
-		To complicate matters further, in some languages, it is impossible to tell visually whether the numeric value you see
-		is a string or a numeric. This is the case with SQL databases, which require you to examine the structure of the 
-		table in order to determine the variable type of a field. Therefore, you may assume two numeric-looking variables can
+		To complicate matters further, in some languages, it is impossible to tell visually whether a seemingly numeric value is truly 
+		a numeric value. This is the case with SQL databases, which require you to examine the structure of the 
+		table in order to determine the variable type of a field. Therefore, you may assume two numeric-seeming variables can
 		be summed, and in many cases they likely can be without error. But if the query encounters an observation where this is
 		not the case, an error will be thrown.
 		<br><br>
