@@ -429,6 +429,21 @@ select '1' + 1
 
 	<h5 class="title" id="other">&nbsp;&nbsp;&nbsp;&nbsp; d.Other Variables</h5>
 	<p>
+	Given the flexibility required to accomplish tasks with a programming language, each language will likely have a 
+	wide variety of additional variable types. 
+	<br><br>
+	One somewhat common variable type is a "catch all" variable type. For example, in the Excel VBA language, 
+	<code>variant</code> variable types allow the variables to work with different types of values. During the course of
+	a program execution, a variant variable type may at one point be a numeric, at another a string, and at yet another
+	a Worksheet object. In general, it is advisable that when the variable type is known in advance to use the
+	explicit variable type rather than a catch-all variable type such as variant.
+	type in the Excel VBA language
+	<br><br>
+	The most common other variable type is an object variable. Precisely what kinds of objects are available depends on the
+	programming language. For example, in R, I could have a variable that represents a vector or one that represents the output
+	of a linear regression (referred to as a <code>lm</code> object). In Excel VBA, I could have a variable that represents 
+	a cell, a range, a worksheet, or a workbook. As mentioned above, these object variables require the most specialized
+	programming-specific knowledge as they are usually only relevant to one language.
 	</p>
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 </div>
