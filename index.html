@@ -45,14 +45,14 @@
 	<br><a href = "#functions">3. Functions</a>
 	<br><a href = "#logic">4. Logic</a>
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#compound">a. Compound Conditions</a>
-		<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#logic_op">b. Logical and Comparison Operators</a>
-	<br><a href = "#loops">5. Loops</a>
-	<br><a href = "#format">6. Source Code Formatting</a>
+	<br><a href = "#operators">5. Operators</a>
+	<br><a href = "#loops">6. Loops</a>
+	<br><a href = "#format">7. Source Code Formatting</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#comments">a. Comments</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#indents">b. Indentation</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#names">c. Naming Conventions</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#ides">d. Integrated Development Environments (IDEs)</a>
-	<br><a href = "#debugging">7. Debugging</a>
+	<br><a href = "#debugging">8. Debugging</a>
 	</p>
 </div>
 	
@@ -646,84 +646,173 @@ If {light="red"} Then {press the brake} Else If {light="green"} Then {proceed} E
 
 
 
-
-<h5 class="title" id="logic_op">&nbsp;&nbsp;&nbsp;&nbsp; b. Logical and Comparison Operators</h5>
+<!--5. Operators-->
+	<div class="docs-section">
+	<h5 class="title" id="operators">5. Operators</h5>
 	<p>
-	Logical and comparison operators are symbols and keywords utilized to evaluate and create logical conditions.
-	The table below summarizes the concepts and lists the symbols/keywords for each operator within the R, T-SQL, and VBA
-	programming languages.
+	Operators are symbols and keywords utilized to perform various operations in programming languages. There are
+	a wide array of operators for any given program and they are equally as likely to vary across programming languages
+	as they are to be the same. The tables below list the most common operators as well as their symbols/keywords
+	across the R, T-SQL, VBA, and SAS programming languages. Much like mathematical expressions, which adhere to the
+	order of operations, there is operational precedence for all types of operators. For example, in SAS, <code>AND</code>
+	operators are processed before <code>OR</code> operators.
 	</p>
-
+		<ol>
+		<li><b>Mathematical Operators</b>: performs mathematical operations such as addition and multiplication.</li>
 <table class="u-full-width">
 <thead>
 	<tr>
-		<th>Operator</th>
-		<th>Description</th>
-		<th>R Operator</th>
-		<th>T-SQL and VBA Operator</th>
-		<th>SAS Operator</th>
+		<th>Operation</th>
+		<th>R</th>
+		<th>T-SQL</th>
+		<th>VBA</th>
+		<th>SAS</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<th>Addition</th>
+		<th>+</th>
+		<th>+</th>
+		<th>+</th>
+		<th>+</th>
+	</tr>
+	<tr>
+		<th>Subtraction</th>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+	</tr>
+	<tr>
+		<th>Mulitplication</th>
+		<th>*</th>
+		<th>*</th>
+		<th>*</th>
+		<th>*</th>
+	</tr>
+	<tr>
+		<th>Division</th>
+		<th>/</th>
+		<th>/</th>
+		<th>/</th>
+		<th>/</th>
+	</tr>
+	<tr>
+		<th>Exponentiation</th>
+		<th>^</th>
+		<th>^</th>
+		<th>^</th>
+		<th>**</th>
+	</tr>
+	<tr>
+		<th>Natural Log</th>
+		<th>log</th>
+		<th>log</th>
+		<th>log 
+		(but ln in Excel!)</th>
+		<th>log</th>
+	</tr>
+</tbody>
+</table>
+	
+		<li><b>Comparison Operators</b>: performs comparisons that return a boolean (True or False).</li>
+<table class="u-full-width">
+<thead>
+	<tr>
+		<th>Operation</th>
+		<th>R</th>
+		<th>T-SQL</th>
+		<th>VBA</th>
+		<th>SAS</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<th>Less Than</th>
+		<th><</th>
+		<th><</th>
+		<th><</th>
+		<th>< or LT</th>
+	</tr>
+	<tr>
+		<th>Less Than or Equal To</th>
+		<th><=</th>
+		<th><=</th>
+		<th><=</th>
+		<th><= or LE</th>
+	</tr>
+	<tr>
+		<th>Greater Than</th>
+		<th>></th>
+		<th>></th>
+		<th>></th>
+		<th>> or GT</th>
+	</tr>
+	<tr>
+		<th>Greater Than or Equal To/th>
+		<th>>=</th>
+		<th>>=</th>
+		<th>>=</th>
+		<th>>= or GE</th>
+	</tr>
+	<tr>
+		<th>Equal To</th>
+		<th>==</th>
+		<th>=</th>
+		<th>=</th>
+		<th>= or EQ</th>
+	</tr>
+	<tr>
+		<th>Not Equal To</th>
+		<th>!=</th>
+		<th><></th>
+		<th><></th>
+		<th>NE or ~= or ^=
+		(the symbol used 
+		depends on your computer)</th>
+	</tr>
+</tbody>
+</table>
+			
+	<li><b>Logical Operators</b>: performs operations with logical conditions.</li>
+<table class="u-full-width">
+<thead>
+	<tr>
+		<th>Operation</th>
+		<th>R</th>
+		<th>T-SQL</th>
+		<th>VBA</th>
+		<th>SAS</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
 		<th>AND</th>
-		<th>A logical operator that returns the
-		intersection of two conditions.</th>
 		<th>&</th>
+		<th>AND</th>
 		<th>AND</th>
 		<th>& or AND</th>
 	</tr>
 	<tr>
 		<th>OR</th>
-		<th>A logical operator that returns the
-		union of two conditions.</th>
 		<th>|</th>
 		<th>OR</th>
-		<th>! or |</th>
+		<th>OR</th>
+		<th>! or | or OR</th>
 	</tr>
 	<tr>
 		<th>NOT</th>
-		<th>A logical operator that toggles a
-		boolean state. It returns False when 
-		True and True when False.</th>
 		<th>!</th>
 		<th>NOT</th>
-		<th>^ or ~</th>
-	</tr>
-	<tr>
-		<th>F</th>
-		<th>F</th>
-		<th>X AND Y</th>
-		<th>F</th>
-	</tr>
-	<tr>
-		<th>T</th>
-		<th>T</th>
-		<th>X OR Y</th>
-		<th>T</th>
-	</tr>
-	<tr>
-		<th>T</th>
-		<th>F</th>
-		<th>X OR Y</th>
-		<th>T</th>
-	</tr>
-	<tr>
-		<th>F</th>
-		<th>T</th>
-		<th>X OR Y</th>
-		<th>T</th>
-	</tr>
-	<tr>
-		<th>F</th>
-		<th>F</th>
-		<th>X OR Y</th>
-		<th>F</th>
+		<th>NOT</th>
+		<th>^ or ~ or NOT</th>
 	</tr>
 </tbody>
 </table>
-
-			<div align="center"><a href = "#top"><h6>Top</h6></a></div>
+		</ol>
+		
+		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 </div>
 
 
