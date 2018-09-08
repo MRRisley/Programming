@@ -38,12 +38,13 @@
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#intro_a">a. Types of Programming</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#intro_b">b. Programming Concepts</a>
 	<br><a href = "#variables">2. Variables</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#numeric">a. Numeric</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#strings">b. Strings</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#booleans">c. Booleans</a>	
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#other">d. Other</a>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#numeric">a. Numeric</a>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#strings">b. Strings</a>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#booleans">c. Booleans</a>	
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#other">d. Other</a>
 	<br><a href = "#functions">3. Functions</a>
 	<br><a href = "#logic">4. Logic</a>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#compound">a. Compound Conditions</a>
 	<br><a href = "#loops">5. Loops</a>
 	<br><a href = "#format">6. Source Code Formatting</a>
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#comments">a. Comments</a>
@@ -543,7 +544,49 @@ If {light="red"} Then {press the brake} Else If {light="green"} Then {proceed} E
 	</p>
 		<div align="center"><img src="images/Logic_Diagram_1.JPG" alt="Decision Tree with Logic"></div>
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
-	</div>
+
+
+
+<h5 class="title" id="compound">&nbsp;&nbsp;&nbsp;&nbsp; a. Compound Conditions</h5>
+	<p>
+	Frequently more than one condition needs to be evaluated in order to make a decision. Before deciding whether you need to
+	take an umbrella with you, you may check whether it is currently raining <b>OR</b> whether rain is forecast in the future.
+	Only one of many conditions may need to be true in this instance in order to make the decision "take my umbrella". 
+	This is an example of a compound condition.
+	<br><br>
+	There are two common keywords used with compound conditions: <code>AND</code> and <code>OR</code>. Some languages use
+	symbols for these keywords. For example, R uses <code>&</code> in lieu of "AND". Nontheless, the uses of  
+	<code>AND</code> and <code>OR</code> are equivalent across programming languages.
+	<br><br>
+	For those familiar with Venn Diagrams or probability, <code>AND</code> represents an <b>intersection</b>
+	of two conditions. This means that both conditions joined by the <code>AND</code> must be satisfied. You can also 
+	join an infinite number of conditions with <code>AND</code>.
+	<pre><code>
+{condition 1} AND {condition 2} AND {condition 3} ...
+	</code></pre>
+	<code>OR</code>, on the other hand, represents a <b>union</b>
+	of two conditions. This means that <i>at least one</i> condition joined by the <code>OR</code> must be satisfied. 
+	As with <code>AND</code>, you can join an infinite number of conditions with <code>OR</code>.
+	<pre><code>
+{condition 1} OR {condition 2} OR {condition 3} ...
+	</code></pre>
+	Finally, you can join <code>AND</code> and <code>OR</code> in as many ways as required, but in these cases parentheses
+	(or some form of bracketing) is recommended.
+	<pre><code>
+{condition 1} AND ({condition 2} OR  {condition 3})
+	</code></pre>
+	</p>
+			<div align="center"><a href = "#top"><h6>Top</h6></a></div>
+</div>
+
+
+
+
+
+
+
+
+
 
 		<!--5. Loops-->
 	<div class="docs-section">
