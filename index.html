@@ -867,11 +867,56 @@ If {light="red"} Then {press the brake} Else If {light="green"} Then {proceed} E
 		<ul>
 			<li>Spaces are characters.</li>
 			<li>An empty string is equivalent to "".</li>
-			<li>In the final example, I use the double quotation to represent that the numeric should
-			be treated as a string.	When concatenating numerics, the programmer necessarily intends them
+			<li>When concatenating numerics, the programmer necessarily intends them
 			to be strings. As always, it is better to err on the side of being deliberate than
 			on producing an unintended result.</li>
 		</ul>
+	<p>
+		Concatenation is accomplished in very different ways across programming languages. The table below
+		lists the programming language, a description of how to concatenate, and an example of concatenation
+		in the language to join the strings "Hello", " ", and "Matt". As with most things in programming, 
+		there are in some cases alternative methods
+		to concatenate strings. The methods below, however, will always accomplish the task.
+	</p>
+<table class="u-full-width">
+<thead>
+	<tr>
+		<th>Language</th>
+		<th>How to Concatenate</th>
+		<th>Concatenation Example</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>R</td>
+		<td>Unlike other languages, concatenation is
+		performed through a concatenation function.
+		The <code>paste()</code> function is built into R
+		and works well. The <code>paste()</code> function
+		includes a separator argument that is by
+		default set to a single space " ".</td>
+		<td>paste("Hello", " ", "Matt", sep="")</td>
+		<td>"Hello123"</td>
+	</tr>
+	<tr>
+		<td>"Hello"</td>
+		<td>" "</td>
+		<td>"Matt"</td>
+		<td>"Hello Matt"</td>
+	</tr>
+	<tr>
+		<td>"2018"</td>
+		<td>""</td>
+		<td>"A"</td>
+		<td>"2018_A"</td>
+	</tr>
+		<td>"2018"</td>
+		<td>"02"</td>
+		<td>"01"</td>
+		<td>"20180201"</td>
+</tbody>	
+		
+		
 		
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>
