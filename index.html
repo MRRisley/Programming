@@ -952,6 +952,35 @@ If {light="red"} Then {press the brake} Else If {light="green"} Then {proceed} E
 		<li>...</li>
 		<li>Check row 50, column 50. Add 1 to the running total.</li>
 	</ol>
+	It is not difficult to see how quickly these nearly-identical tasks, when repeated in this manner, would prove a
+	programming nightmare. Even though the tasks themselves are not complex, programming 2,500 near-identical lines
+	would be very onerous. However, a loop can quickly accomplish this task. The pseudo-code below demonstrates
+	how a loop for this task would work.
+	</p>
+	<pre><code>
+{Check if cell > threshold}
+{Add 1 to a running total if cell > threshold}
+{Move to next cell}
+	</code></pre>
+	<p>
+		In most programming languages, the <code>{Move to next cell}</code> portion <b>wraps</b> 
+		the code that is meant to be repeated, either through a specific syntax or symbols. In programming,
+		wrapping usually refers to placing a block of code within a pre-defined structure
+		(referred to as a wrapper). For example, a wrapper function would wrap another function within it 
+		(in this instance, it makes the original function more customizable.
+		A loop usually takes some variation on the pseudo-code below. 
+	</p>
+	<pre><code>
+For [every cell in the 50 x 50 range]
+{Check if cell > threshold}
+{Add 1 to a running total if cell > threshold}
+{continue until all cells are looped}
+	</code></pre>
+	<p>
+		In the example above, the 2,500-line code that would explicitly perform
+		the task can be condensed into 4 lines with the use of a loop. (In Excel VBA, it would also
+		be written in 4 lines). All programming languages have loops available, but they
+		usuall involve different symbols and syntax.
 	</p>
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>
