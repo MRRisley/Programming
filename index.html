@@ -1042,7 +1042,7 @@ x = 1 'comments can be inserted in-line
 -----
 
 -- T-SQL
--- A comment in Excel T-SQL are two dashes (--).
+-- A comment in Excel T-SQL is two dashes (--).
 select 1+1 --comments can be inserted in-line
 
 -----
@@ -1051,10 +1051,22 @@ select 1+1 --comments can be inserted in-line
 * There are two types of comments in SAS
 The first is an asterisk (*) followed by a semi-colon (;);
 /*The second begins with a foward slash (/) and asterisk (*)
-and end with an asterisk and foward slash /*
+and ends with an asterisk and foward slash /*
 data temp; /* only the second type can be used in-line */
-	</code></pre>
-
+</code></pre>
+	<p>
+		Indentation of code allows "blocks" of text that span multiple lines to be visually set apart
+		from the remainder of the code. These indented blocks of code are usually used for code that 
+		executes loops or other statements that require several statements. An example of a loop in the 
+		R language is shown below with indendation.
+	</p>
+<pre><code>
+for (i in 1:10) {
+	x[i] = i*2
+	y[i] = i*3+2
+}
+</code></pre>
+	
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>	
 	
