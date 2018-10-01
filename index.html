@@ -1149,7 +1149,46 @@ Error in print(z) : object 'z' not found
 	</code></pre>
 	<p>Without accounting for the first error, you cannot account for subsequent errors. Therefore, <b>you must always
 	debug errors in the order in which they occur</b>.
+	<br><br>
+	The advice above is the most important part of understanding the debugging process, together with: (1) have patience
+	and (2) Google often. Even though I am (mostly) patient and a proficient Googler, I have had to spend hours at times on
+	the most elusive bugs. This is the nature of programming. 
+	<br><br>
+	Finally, there are <b>types</b> of errors that can help you in the debugging process. I think of them in 3 groups, shown
+	below. There are others out there, but these are the main culprits. 
 	</p>
+	
+	<ol>
+	<li><b>Syntax Errors</b>: These involve an error in the way in which the code is written. This can be a misplaced or missing
+	comma, a misspelled keyword or variable, or, if your language is case-sensitive, improper case.</li>
+	<p>Here's a syntax error in R because the <code>as.character</code> function has an improperly capitalized "c":</p>
+	<pre><code>
+> as.Character(1)
+Error in as.Character(1) : could not find function "as.Character"
+	</code></pre>
+	<p>Here's a syntax error in Excel VBA:</p>
+		<pre><div align="center"><img src="images/VBA Syntax Error.JPG" alt="VBA Syntax Error"></div></pre>
+	<p>Note that the error message received in Excel VBA is somewhat more straightforward than the error message in R.
+	Also, Excel VBA turns the text to the color red when there is a syntax error.</p>
+		
+		<li><b>Type Mismatch Errors</b>: These involve an error from attempting to perform a function with an 
+		incompatiable variable type. See <a href = "#variables">Variables</a> above. This can be a string 
+		multiplied by a numeric as in the R example above, or it can result from passing a list in R to a
+		function that only accepts vectors.</li>
+		
+		<li><b>Logic Errors</b>: These are "invisible" errors, but they are the worst kind of error because they can 
+		result in incorrect conclusions or inferences. A logic error results from incorrect logic within the program itself. 
+		For example, say your manager wants to apply an attrition assumption for lost business of 1.5%. Within the
+		program, a logic error would result if misplace the decimal point: <code>x*1.5</code> where <code>x</code>
+		is your gross business. Without any other errors, the code would execute and spit out an attrition assumption. 
+		However, the attrition would be 1.5 times your gross business, which would imply more lost business than you
+		have. In certain applications, this error may be easy to spot, but in other applications or with more subtle errors,
+		you can have more difficult-to-detect errors. <b>The best way to prevent logic errors is to test your
+		code and test it often.</b> I've also found a second set of eyes (such as my manager) helpful as well. Don't accept
+		a counter-intuitive answer without making sure there aren't any obvious errors.</li>
+	
+	</ol>
+	
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>	
 		
