@@ -1115,14 +1115,41 @@ End If
 	<p>
 		Combinations of (1) and (3) or (2) and (3) will almost always result in extended debugging processes. The <b>best</b>
 		method when dealing with something completely unfamiliar is to begin with error-free code (an example from the 
-		internet or class), and modify piece-by-piece while handling each error as it occurs. If trying to run a code chunk
+		internet or class). Then, modify piece-by-piece while handling each error as it occurs. If trying to run a code chunk
 		with many errors, you will encounter more than one type of error through the debugging process. For a beginning
 		coder, this may be the point at which you throw your hands in the air and say there is no use. 
 		For the veteran coder, a change in the error after a code change is new, and usually useful, information. Even then,
-		the veteran coder may curse under their breath.
+		the veteran coder may curse under his or her breath.
+		<br><br>
+		The point of all this rambling is:
 	</p>
-		
-		
+		<h5 align="center"><b>Errors are your friend!</b></h5>
+	<p>
+		I have seen beginning coders <i>never</i> produce an error-free script. This is partly due to unfamiliarity, but it
+		is also due to their attitude toward errors. Write the entire program and then run the code to see what happens is
+		never a good route. Break the task/program into bite-sized chunks that you tackle individually and <b>sequentially</b>.
+		Code downstream from an error will almost always produce more errors:
+	</p>
+	<pre><code>
+> x <- "1"
+> z <- x*2
+Error in x * 2 : non-numeric argument to binary operator
+> print(z)
+Error in print(z) : object 'z' not found
+	</code></pre>
+	<p>In the R example above, x is stored as the value 1, but it is a string. Therefore, when multiplied by 2, you get an error based
+	on incompatible types. The third error only results from the fact that the second statement failed (i.e., nothing was
+	assigned to the variable <code>z</code>. Otherwise, there is no error:
+	</p>
+	<pre><code>
+> x <- 1
+> z <- x*2
+> print(z)
+[1] 2
+	</code></pre>
+	<p>Without accounting for the first error, you cannot account for subsequent errors. Therefore, <b>you must always
+	debug errors in the order in which they occur</b>.
+	</p>
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>	
 		
