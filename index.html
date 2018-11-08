@@ -6,6 +6,16 @@
 
 <!--HEAD-->
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125795941-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125795941-1');
+</script>
+	
 	<meta charset="UTF-8">
 	<title>MRRisley:=("Programming")</title>
 	<meta name="description" content="A high-level guide to programming for analytics.">
@@ -49,10 +59,6 @@
 	<br><a href = "#concatenation">6. Concatenation</a>
 	<br><a href = "#loops">7. Loops</a>
 	<br><a href = "#format">8. Source Code Formatting</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#comments">a. Comments</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#indents">b. Indentation</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#names">c. Naming Conventions</a>
-	<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "#ides">d. Integrated Development Environments (IDEs)</a>
 	<br><a href = "#debugging">9. Debugging</a>
 	</p>
 </div>
@@ -98,6 +104,13 @@
 	<li>in other settings, it may be appropriate to dive immediately into technical details</li>
 	<li>for non-technical audiences, it may be preferable to develop graphs/figures in Excel or Tableau as they are typically presentation-ready with little work</li>
 	<li>for technical audiences, direct output from statistical software may be acceptable or even expected</li>
+	</ul>
+	<li>Insight Maintenance</li>
+	<ul>
+	<li>depending on the nature of the problem, you may be required to replicate the analysis in the future</li>
+	<li>automation of the analysis is sometimes preferred if it is easier than the alternative</li>
+	<li>this stage is usually referred to as placing the process into "production"</li>
+	<li>processes in production need monitoring to ensure it is performing as intended</li>
 	</ul>
 	</ol>
 				<div align="center"><a href = "#top"><h6>Top</h6></a></div>
@@ -544,7 +557,7 @@ If {light="red"} Then {press the brake} Else If {light="green"} Then {proceed} E
 	then the program will execute a sequence of events. Infinitely long and infinitely complex decision trees can be programmed
 	simply from the <code>If...Then...Else</code> logic.
 	</p>
-		<div align="center"><img src="images/Logic_Diagram_1.JPG" alt="Decision Tree with Logic"></div>
+		<pre><div align="center"><img src="images/Logic_Diagram_1.JPG" alt="Decision Tree with Logic"></div></pre>
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 
 
@@ -822,12 +835,108 @@ If {light="red"} Then {press the brake} Else If {light="green"} Then {proceed} E
 	<div class="docs-section">
 	<h5 class="title" id="concatenation">6. Concatenation</h5>
 	<p>
+		When working with strings in programming, it is common to require concatenation to join them together. 
+		Concatenation simply refers to combining strings into a larger string, single string. The examples
+		below show two or three strings and the result of concatenation. Double quotation marks are used by convention
+		to represent strings. 
 	</p>
+<table class="u-full-width">
+<thead>
+	<tr>
+		<th>String A</th>
+		<th>String B</th>
+		<th>String C</th>
+		<th>Concatenated String</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>"Hello"</td>
+		<td>"123"</td>
+		<td></td>
+		<td>"Hello123"</td>
+	</tr>
+	<tr>
+		<td>"Hello"</td>
+		<td>" "</td>
+		<td>"Matt"</td>
+		<td>"Hello Matt"</td>
+	</tr>
+	<tr>
+		<td>"2018"</td>
+		<td>""</td>
+		<td>"A"</td>
+		<td>"2018_A"</td>
+	</tr>
+		<td>"2018"</td>
+		<td>"02"</td>
+		<td>"01"</td>
+		<td>"20180201"</td>
+</tbody>
+</table>
+		<p>
+		From the examples above, there are a couple key points:
+		</p>
+		<ul>
+			<li>Spaces are characters.</li>
+			<li>An empty string is equivalent to "".</li>
+			<li>When concatenating numerics, the programmer necessarily intends them
+			to be strings. As always, it is better to err on the side of being deliberate than
+			on producing an unintended result.</li>
+		</ul>
+	<p>
+		Concatenation is accomplished in very different ways across programming languages. The table below
+		lists the programming language, a description of how to concatenate, and an example of concatenation
+		in the language to join the strings "Hello", " ", and "Matt". As with most things in programming, 
+		there are in some cases alternative methods
+		to concatenate strings. The methods below, however, will always accomplish the task.
+	</p>
+<table class="u-full-width">
+<thead>
+	<tr>
+		<th width="10%">Language</th>
+		<th width="40%">How to Concatenate</th>
+		<th width="50%">Concatenation Example</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>R</td>
+		<td>Concatenation is 
+		performed through the concatenation function, 
+		<code>paste()</code>. The <code>sep=""</code> 
+		argument tells the function to not include a delimiter.</td>
+		<td><code>paste("Hello", " ", "Matt", sep="")</code></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>This example uses the default <code>sep=" "</code> 
+		argument. The result is the same.
+		Note that in R, omission of an argument with a
+		default returns the default.</td>
+		<td><code>paste("Hello", "Matt")</code></td>
+	</tr>
+	<tr>
+		<td>T-SQL</td>
+		<td>Concatenation is achieved through the "+" symbol. Note
+		that this operator is the same as the addition operator.</td>
+		<td><code>'Hello' + ' ' + 'Matt'</code></td>
+	</tr>
+	<tr>
+		<td>VBA</td>
+		<td>Concatenation is achieved through the "&" symbol.</td>
+		<td><code>"Hello" & " " & "Matt"</code></td>
+	</tr>
+	<tr>
+		<td>SAS</td>
+		<td>Concatenation is achieved through the "||" symbols (double bars).
+		Finally, SAS also has a number of concatenation functions.</td>
+		<td><code>'Hello' || ' ' || 'Matt'</code></td>
+	</tr>
+</tbody>
+</table>
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>
-
-
-
 
 
 
@@ -837,15 +946,152 @@ If {light="red"} Then {press the brake} Else If {light="green"} Then {proceed} E
 	<div class="docs-section">
 	<h5 class="title" id="loops">7. Loops</h5>
 	<p>
+	Loops are not necessarily a feature of every program, but they are certainly a common feature of programming. As an analyst,
+	certain tasks will invevitably require a loop. A loop is simply a way to perform an iterative task repeatedly
+	(i.e., in a loop). In my experience, loops have the most concrete examples in Excel VBA. Imagine you have a 
+	50 row x 50 column block of cells in a spreadsheet (i.e., 2,500 cells). For every cell, you want to check if the
+	value exceeds a pre-defined threshold and perform conditional formatting on the cell for when it does. You also
+	want to count how many cells in the 2,500 range satisfy this criteron. 
+	<br><br>
+	As with nearly every programming task, there is more than one way to accomplish the task, some of which actually
+	do not require a loop. However, once you become familiar with the logic of loops and how they are programmed in a
+	particular language, you will default to a loop in order to solve tasks rather than what are usually more 
+	complicated alternatives.
+	<br><br>
+	In the example of a 50 x 50 Excel range, one can easily establish the following logic to solve the task: 
+	<ol>
+		<li>Check row 1, column 1. Add 1 to a running total.</li>
+		<li>Check row 1, column 2. Add 1 to the running total.</li>
+		<li>...</li>
+		<li>Check row 50, column 50. Add 1 to the running total.</li>
+	</ol>
+	It is not difficult to see how quickly these nearly-identical tasks, when repeated in this manner, would prove a
+	programming nightmare. Even though the tasks themselves are not complex, programming 2,500 near-identical lines
+	would be very onerous. However, a loop can quickly accomplish this task. The pseudo-code below demonstrates
+	how a loop for this task would work.
+	</p>
+	<pre><code>
+{Check if cell > threshold}
+{Add 1 to a running total if cell > threshold}
+{Move to next cell}
+	</code></pre>
+	<p>
+		In most programming languages, the <code>{Move to next cell}</code> portion <b>wraps</b> 
+		the code that is meant to be repeated, either through a specific syntax or symbols. In programming,
+		wrapping usually refers to placing a block of code within a pre-defined structure
+		(referred to as a wrapper). For example, a wrapper function would wrap another function within it 
+		(in this instance, it makes the original function more customizable.
+		A loop usually takes some variation on the pseudo-code below. 
+	</p>
+	<pre><code>
+For [every cell in the 50 x 50 range]
+{Check if cell > threshold}
+{Add 1 to a running total if cell > threshold}
+{continue until all cells are looped}
+	</code></pre>
+	<p>
+		In the example above, the 2,500-line code that would explicitly perform
+		the task can be condensed into 4 lines with the use of a loop. (In Excel VBA, it would also
+		be written in 4 lines). All programming languages have loops available, but they
+		usually involve different symbols and syntax. Regardless, loops are a simple and efficient way
+		to accomplish iterative tasks.
 	</p>
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>
+
+
+
+
+
+
 
 		<!--8. Code Format-->
 	<div class="docs-section">
 	<h5 class="title" id="format">8. Source Code Formatting</h5>
 	<p>
+	Formatting code does not impact how the code is processed, but it does have a considerable impact on the
+	"governance" of the code, including its readability by other programmers/users as well as 
+	validation that the code is performing as intended. Most importantly, formatting your code helps 
+	you work within your own code. I consider myself a notoriously unorganized coder, and I always marvel
+	at organized code because it is highly readable.
+	<br><br>
+	While there are not necessarily any "rules" for formatting code, there tend to be some standards:
+	<ol>
+		<li>Comments in code are always advised. In fact, I have never heard of someone inheriting code
+			where there were <b>too many</b> comments. It is always the opposite--there are
+			too few comments. Comments
+		are useful for (1) identifying what the code is doing and (2) identifying future enhancements.</li>
+		<li>Indentation of self-contained portions of code, such as If statements and loops, allow these
+			portions of code to stand out.</li>
+		<li>Whitespace allows breaks in the code. 1,000 lines of code without whitespace to divide it is
+		far less readable than adding 50 lines of whitespace to break up the code into logically-defined sections.</li>
+		<li>Finally, there are some conventions to naming variables within programs. It is advisable to
+		name variables in a way that identifies their type and what value they are storing. For example, <code>mtx</code>
+			may identify a matrix variable in R, and <code>dblTemp</code> may refer to a temporary
+			numeric variable that has double-point precision.
+		</ol>
+	Of the list above, only comments vary from language to language. Comments within a programming language
+		are denoted with a symbol or character. Everything after a comment symbol/character are
+		displayed as a comment within the code and do not execute. The code below shows how commenting working in
+		various languages.
 	</p>
+	<pre><code>
+# R
+# A comment in R is the number/pound (#) symbol.
+x = 1 #comments can be inserted in-line
+
+-----
+
+' VBA
+' A comment in Excel VBA is the single apostrophe (') symbol.
+x = 1 'comments can be inserted in-line
+
+-----
+
+-- T-SQL
+-- A comment in Excel T-SQL is two dashes (--).
+select 1+1 --comments can be inserted in-line
+
+-----
+
+* SAS;
+
+* There are two types of comments in SAS
+The first is an asterisk (*) followed by a semi-colon (;);
+
+/*The second begins with a foward slash (/) and asterisk (*)
+and ends with an asterisk and foward slash /*
+
+data temp /* only the second type can be used in-line */;
+
+data temp; * in-line after the statement is recommended;
+run; /* this way, errors are less likely to occur */
+	</code></pre>
+	<p>
+		Indentation of code allows "blocks" of text that span multiple lines to be visually set apart
+		from the remainder of the code. These indented blocks of code are usually used for code that 
+		executes loops or other statements that require several statements. An example of a loop in the 
+		R language is shown below with indendation.
+	</p>
+	<pre><code>
+for (i in 1:10) {
+	x[i] = i*2
+	y[i] = i*3+2
+}
+	</code></pre>
+	<p>
+		An example of an If block in Excel VBA is shown below.
+	</p>
+	<pre><code>
+If rng > 0 Then
+	x = rng*2
+	y = rng*3+2
+Else
+	x = rng
+	y=rng*2+2
+End If
+	</code></pre>
+	
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>	
 	
@@ -853,7 +1099,96 @@ If {light="red"} Then {press the brake} Else If {light="green"} Then {proceed} E
 	<div class="docs-section">
 	<h5 class="title" id="debugging">9. Debugging</h5>
 	<p>
+		Coders <b>always</b> encounter programming errors. Without understanding that errors are a part of programming,
+		a first-time coder can easily find them frustrating if not downright insurmountable. "Debugging" errors
+		is one of the key components of becoming a coder.
+	<br><br>
+		First, it is important to understand why errors occur in the first place. There are three reasons for errors:
 	</p>
+		<ol>
+			<li>Errors occur for first-time coders because
+				of unfamiliarity with the language.</li>
+			<li>Errors occur for veteran coders when they attempt to
+				code something unfamiliar.</li>
+			<li>Errors occur for everyone because of rushing.</li>
+		</ol>	
+	<p>
+		Combinations of (1) and (3) or (2) and (3) will almost always result in extended debugging processes. The <b>best</b>
+		method when dealing with something completely unfamiliar is to begin with error-free code (an example from the 
+		internet or class). Then, modify piece-by-piece while handling each error as it occurs. If trying to run a code chunk
+		with many errors, you will encounter more than one type of error through the debugging process. For a beginning
+		coder, this may be the point at which you throw your hands in the air and say there is no use. 
+		For the veteran coder, a change in the error after a code change is new, and usually useful, information. Even then,
+		the veteran coder may curse under his or her breath.
+		<br><br>
+		The point of all this rambling is:
+	</p>
+		<h5 align="center"><b>Errors are your friend!</b></h5>
+	<p>
+		I have seen beginning coders <i>never</i> produce an error-free script. This is partly due to unfamiliarity, but it
+		is also due to their attitude toward errors. Write the entire program and then run the code to see what happens is
+		never a good route. Break the task/program into bite-sized chunks that you tackle individually and <b>sequentially</b>.
+		Code downstream from an error will almost always produce more errors:
+	</p>
+	<pre><code>
+> x <- "1"
+> z <- x*2
+Error in x * 2 : non-numeric argument to binary operator
+> print(z)
+Error in print(z) : object 'z' not found
+	</code></pre>
+	<p>In the R example above, x is stored as the value 1, but it is a string. Therefore, when multiplied by 2, you get an error based
+	on incompatible types. The third error only results from the fact that the second statement failed (i.e., nothing was
+	assigned to the variable <code>z</code>. Otherwise, there is no error:
+	</p>
+	<pre><code>
+> x <- 1
+> z <- x*2
+> print(z)
+[1] 2
+	</code></pre>
+	<p>Without accounting for the first error, you cannot account for subsequent errors. Therefore, <b>you must always
+	debug errors in the order in which they occur</b>.
+	<br><br>
+	The advice above is the most important part of understanding the debugging process, together with: (1) have patience
+	and (2) Google often. Even though I am (mostly) patient and a proficient Googler, I have had to spend hours at times on
+	the most elusive bugs. This is the nature of programming. 
+	<br><br>
+	Finally, there are <b>types</b> of errors that can help you in the debugging process. I think of them in 3 groups, shown
+	below. There are others out there, but these are the main culprits. 
+	</p>
+	
+	<ol>
+	<li><b>Syntax Errors</b>: These involve an error in the way in which the code is written. This can be a misplaced or missing
+	comma, a misspelled keyword or variable, or, if your language is case-sensitive, improper case.</li>
+	<p>Here's a syntax error in R because the <code>as.character</code> function has an improperly capitalized "c":</p>
+	<pre><code>
+> as.Character(1)
+Error in as.Character(1) : could not find function "as.Character"
+	</code></pre>
+	<p>Here's a syntax error in Excel VBA:</p>
+		<pre><div align="center"><img src="images/VBA Syntax Error.JPG" alt="VBA Syntax Error"></div></pre>
+	<p>Note that the error message received in Excel VBA is somewhat more straightforward than the error message in R.
+	Also, Excel VBA turns the text to the color red when there is a syntax error.</p>
+		
+		<li><b>Type Mismatch Errors</b>: These involve an error from attempting to perform a function with an 
+		incompatiable variable type. See <a href = "#variables">Variables</a> above. This can be a string 
+		multiplied by a numeric as in the R example above, or it can result from passing a list in R to a
+		function that only accepts vectors.</li>
+		
+		<li><b>Logic Errors</b>: These are "invisible" errors, but they are the worst kind of error because they can 
+		result in incorrect conclusions or inferences. A logic error results from incorrect logic within the program itself. 
+		For example, say your manager wants to apply an attrition assumption for lost business of 1.5%. Within the
+		program, a logic error would result if you misplace the decimal point: <code>x*1.5</code> where <code>x</code>
+		is your gross business. Without any other errors, the code would execute and spit out an attrition assumption. 
+		However, the attrition would be 1.5 times your gross business, which would imply more lost business than you
+		have. In certain applications, this error may be easy to spot, but in other applications or with more subtle errors,
+		it may go undetected without thorough code testing. <b>Therefore, the best way to prevent logic errors is to test your
+		code and test it often.</b> I've also found a second set of eyes (such as my manager) helpful as well. Don't accept
+		a counter-intuitive answer without making sure there aren't any obvious logic errors.</li>
+	
+	</ol>
+	
 		<div align="center"><a href = "#top"><h6>Top</h6></a></div>
 	</div>	
 		
